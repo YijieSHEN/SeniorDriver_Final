@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XE9-Zp-rfi">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New Location-->
+        <scene sceneID="bq3-zA-y4R">
+            <objects>
+                <tableViewController id="YcV-qB-LlA" customClass="TableViewController" customModule="FBLocationShareTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fQh-ou-6vu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" id="nop-fy-M06" customClass="LocationCellTableViewCell" customModule="FBLocationShareTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nop-fy-M06" id="1zb-wH-nR2">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRE-KT-ewb">
+                                            <rect key="frame" x="14" y="0.0" width="349" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="locationLbl" destination="yRE-KT-ewb" id="jBv-1l-wbn"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YcV-qB-LlA" id="nss-xj-rWw"/>
+                            <outlet property="delegate" destination="YcV-qB-LlA" id="t5k-DS-cGs"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="New Location" id="9rZ-pX-Gxf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QEq-Q1-Cul">
+                            <connections>
+                                <action selector="addLocation:" destination="YcV-qB-LlA" id="AWf-Y5-02s"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxw-QP-zmV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1228" y="488"/>
+        </scene>
+        <!--Senior Driver-->
+        <scene sceneID="Cz9-NZ-kBQ">
+            <objects>
+                <viewController id="XE9-Zp-rfi" customClass="TrackingViewController" customModule="FBLocationShareTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Hs-yt-bA5"/>
+                        <viewControllerLayoutGuide type="bottom" id="KEt-my-tH3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Rr-AR-Z0o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mZ6-kX-6uf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="R4x-8m-QQp"/>
+                                    <constraint firstAttribute="width" constant="320" id="skv-eL-j1M"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egg-eT-9dz">
+                                <rect key="frame" x="48" y="472" width="225" height="49"/>
+                                <color key="backgroundColor" red="1" green="0.071237223030195751" blue="0.13924954636813225" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="77" id="GlZ-QB-Ri9"/>
+                                    <constraint firstAttribute="height" constant="49" id="QaZ-YO-zV6"/>
+                                    <constraint firstAttribute="width" constant="225" id="bb0-md-o6C"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="225" id="dz8-vG-28b"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="152" id="rjI-FA-zq3"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="zch-k5-Bgx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                <state key="normal" title="  Share My Location  ">
+                                    <color key="titleColor" red="0.034944370211106843" green="0.0" blue="0.43690690440261781" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ShareLocation:" destination="XE9-Zp-rfi" eventType="touchUpInside" id="XAR-Dd-ypL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KEt-my-tH3" firstAttribute="top" secondItem="mZ6-kX-6uf" secondAttribute="bottom" id="8Jv-5X-oHW"/>
+                            <constraint firstItem="mZ6-kX-6uf" firstAttribute="top" secondItem="6Rr-AR-Z0o" secondAttribute="top" id="I1r-3J-ZoU"/>
+                            <constraint firstItem="egg-eT-9dz" firstAttribute="centerX" secondItem="mZ6-kX-6uf" secondAttribute="centerX" id="T3D-zI-UUz"/>
+                            <constraint firstItem="mZ6-kX-6uf" firstAttribute="leading" secondItem="6Rr-AR-Z0o" secondAttribute="leading" id="XpM-ly-YgU"/>
+                            <constraint firstItem="egg-eT-9dz" firstAttribute="top" secondItem="mZ6-kX-6uf" secondAttribute="bottom" constant="-96" id="nqr-ss-lOg"/>
+                            <constraint firstAttribute="trailing" secondItem="mZ6-kX-6uf" secondAttribute="trailing" id="sTL-dR-ZBU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Senior Driver" id="ZsG-Je-5wx"/>
+                    <connections>
+                        <outlet property="ShareLocBtn" destination="egg-eT-9dz" id="8uM-ZE-xXQ"/>
+                        <outlet property="mapView" destination="mZ6-kX-6uf" id="ggF-cx-Pu7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L7H-1l-ZD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3196.875" y="1048.943661971831"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vc8-Mi-gSw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tls-21-2pe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PUV-jk-pRo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YcV-qB-LlA" kind="relationship" relationship="rootViewController" id="5vN-TJ-ZW2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DcT-Pb-Dkc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="416" y="488"/>
+        </scene>
+    </scenes>
+</document>
